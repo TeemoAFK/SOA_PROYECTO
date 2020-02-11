@@ -1,0 +1,28 @@
+
+  <div *ngIf="showSplash" class="splash">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+  </div>
+
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" class="ios" tab="home">
+      <ion-icon name="man"></ion-icon>
+      <ion-label>Reservaciones</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/make-appointment" class="ios" tab="make-appointment">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>Agregar Reserva</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
