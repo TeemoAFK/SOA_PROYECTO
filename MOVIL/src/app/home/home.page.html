@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">
+      <ion-icon name="clipboard"></ion-icon>
+      Lista de Reservaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Reservaciones Pendientes
+    </ion-list-header>
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+      <ion-label>
+        <h5>
+          <ion-icon name="man"></ion-icon>Nombre: {{booking.name}}
+        </h5>
+        <p>
+          <ion-icon name="calendar"></ion-icon>Check In: {{booking.checkin}}
+        </p>
+        <p>
+          <ion-icon name="calendar"></ion-icon>Check Out: {{booking.checkout}}
+        </p>
+        <p>
+          <ion-icon name="eye"></ion-icon>Observaciones: {{booking.email}}
+        </p>
+        <p>
+          <ion-icon name="people"></ion-icon>Huespedes: {{booking.other}}
+        </p> 
+        <p>
+          <ion-icon name="cash"></ion-icon>A cobrar: {{booking.mobile}}
+        </p>
+
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/edit-appointment/', booking.$key]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteBooking(booking.$key)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
